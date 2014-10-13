@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="outfitApp">
+<html>
 <head>
        <meta charset="utf-8">
     <title>Work It</title>
@@ -10,8 +10,8 @@
 </head>
 
 <body ng-app ng-controller="todoCtrl">
-
-<h2>Choose the outfit that you like!</h2>
+<div class="container">
+<h2><a>Choose the outfit that you like!</h2>
 
 
 <div ng-repeat="x in styleList">
@@ -20,7 +20,7 @@
 <input type="checkbox" ng-hide="myVar" src="{{x.styleImage}}" ng-model="x.chosen"> 
     </div>
 
-<p><button ng-hide="myVar" ng-click="add()">Done</button></p>
+<p><a href="add.html"> <button ng-hide="myVar" ng-click="add()">Done</button></p></a>
 
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 
@@ -57,10 +57,6 @@ $scope.myVar=false;
     };
 }
 </script>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="outfitApp.js"></script>
-<script src="outfitCtrl.js"></script>
-<script src="bindings.js"></script>
+
 </body>
 </html>
