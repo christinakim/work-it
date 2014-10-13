@@ -13,34 +13,22 @@
 
 <div class="container">
 <h2>Upload your outfit</h2>
+<p>
+
+</p>
+ <img src="outfit.jpg" alt="outfit" style="width:304px;height:228px">
 
 <p> 
-	<div class="upload-container">
-  <h1>
-  <a target="_blank" href="https://github.com/adrotec/knockout-file-bindings">knockout-file-bindings</a>
-  </h1>
-<div class="well" data-bind="fileDrag: fileData">
-    <div class="form-group row">
-        <div class="col-md-6">
-            <img style="height: 125px;" class="img-rounded  thumb" data-bind="attr: { src: fileData().dataURL }, visible: fileData().dataURL">
-            <div data-bind="ifnot: fileData().dataURL">
-                <label class="drag-label">Drag file here</label>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <input type="file" data-bind="fileInput: fileData, customFileInput: {
-              buttonClass: 'btn btn-success',
-              fileNameClass: 'disabled form-control',
-              onClear: onClear,
-            }" accept="image/*">
-        </div>
-    </div>
-</div>
+	<div class="file-upload">
+  <div class="file-select">
+ 
+    <input type="file" name="chooseFile" id="chooseFile">
+  </div>
 </div>
 </p>
 
 <p>
-<button ng_click="save()">Upload</button>
+<button ng-click="save()">Upload</button>
 <button ng-click="clear()">Clear</button>
 </p>
 
@@ -48,8 +36,10 @@
 </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="outfitApp.js"></script>
 <script src="outfitCtrl.js"></script>
+<script src="bindings.js"></script>
 
 </body>
 </html>
