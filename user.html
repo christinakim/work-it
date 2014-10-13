@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="outfitApp">
+<head>
+       <meta charset="utf-8">
+    <title>Work It</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+
+</head>
+
+<body ng-app ng-controller="todoCtrl">
+
+<h2>Choose the outfit that you like!</h2>
+
+
+<div ng-repeat="x in styleList">
+	
+    <img ng-src="{{ x.styleImage }}" ng-model="test" ng-click="save()" alt="some_text" width="200" height="260">
+<input type="checkbox" ng-hide="myVar" src="{{x.styleImage}}" ng-model="x.chosen"> 
+    </div>
+
+<p><button ng-hide="myVar" ng-click="add()">Done</button></p>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+
+<script>
+function todoCtrl($scope) {
+    $scope.styleList = [
+    {styleImage:'pic/formal1.jpg', chosen:false},
+    {styleImage:'pic/formal2.jpg', chosen:false},
+    {styleImage:'pic/formal3.jpg', chosen:false},
+    {styleImage:'pic/formal4.jpg', chosen:false},
+    {styleImage:'pic/formal5.jpg', chosen:false},
+    {styleImage:'pic/casual1.jpg', chosen:false},
+    {styleImage:'pic/casual2.jpg', chosen:false},
+    {styleImage:'pic/casual3.jpg', chosen:false},
+    {styleImage:'pic/casual4.jpg', chosen:false},
+    {styleImage:'pic/casual5.jpg', chosen:false},
+    {styleImage:'pic/night1.jpg', chosen:false},
+    {styleImage:'pic/night2.jpg', chosen:false},
+    {styleImage:'pic/night3.jpg', chosen:false},
+    {styleImage:'pic/night4.jpg', chosen:false},
+    {styleImage:'pic/night5.jpg', chosen:false},
+    
+    ];
+
+$scope.myVar=false; 
+    $scope.add = function() {
+    $scope.myVar=!$scope.myVar;
+        var oldList = $scope.styleList;
+        $scope.styleList = [];
+        angular.forEach(oldList, function(x) {
+            if (x.chosen) $scope.styleList.push(x);
+        });
+        
+    };
+}
+</script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="outfitApp.js"></script>
+<script src="outfitCtrl.js"></script>
+<script src="bindings.js"></script>
+</body>
+</html>

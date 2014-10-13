@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="outfitApp">
+<head>
+	   <meta charset="utf-8">
+    <title>Work It</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+
+</head>
+
+<body>
+
+<div ng-app="" ng-controller="personController">
+
+
+<img src="pic/selfie.jpg" width="300" height="360">
+
+<p  ng-hide="myVar">
+So, what do think?
+<br/>
+
+<input type="radio">YES
+<input type="radio">NO
+
+<br/>
+
+Why?
+<br/>
+<textarea  ng-model="message" cols="40" rows="10"></textarea>
+<br/>
+<button ng-click="toggle()">Send</button>
+
+</p>
+
+<p ng-hide="myVar2">
+
+{{message}}
+
+</p>
+
+</div>
+
+<script> 
+function personController($scope) {
+    $scope.myVar = false;
+    $scope.myVar2 = true;
+    $scope.toggle = function() {
+        $scope.myVar = !$scope.myVar;
+        $scope.myVar2 =!$scope.myVar2;
+    };
+}
+</script> 
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="outfitApp.js"></script>
+<script src="outfitCtrl.js"></script>
+<script src="bindings.js"></script>
+
+</body>
+</html>
+
